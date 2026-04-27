@@ -1,0 +1,361 @@
+.landing-page {
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  width: min(1120px, calc(100% - 40px));
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-brand,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-brand {
+  gap: 12px;
+  color: var(--text);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.site-brand-icon {
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.site-brand-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.site-nav {
+  gap: 22px;
+}
+
+.site-nav a,
+.primary-link,
+.secondary-link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.site-nav a {
+  color: var(--muted);
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+.landing-hero {
+  width: min(1120px, calc(100% - 40px));
+  min-height: calc(100svh - 76px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.6fr);
+  align-items: center;
+  gap: 64px;
+  margin: 0 auto;
+  padding: 68px 0 92px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-copy {
+  max-width: 740px;
+  animation: hero-in 540ms ease both;
+}
+
+.hero-copy h1 {
+  max-width: 680px;
+  margin: 0 0 22px;
+  font-size: 4.4rem;
+  letter-spacing: 0;
+}
+
+.hero-copy p {
+  max-width: 590px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.hero-kicker,
+.section-kicker {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.primary-link,
+.secondary-link {
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+}
+
+.primary-link {
+  background: var(--ink);
+  color: var(--button-text);
+}
+
+.primary-link:hover,
+.secondary-link:hover {
+  transform: translateY(-2px);
+}
+
+.secondary-link {
+  background: transparent;
+}
+
+.hero-image {
+  width: min(100%, 360px);
+  justify-self: end;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0.7;
+  animation: image-in 700ms ease 120ms both;
+}
+
+.content-section,
+.workflow-section,
+.roadmap-section {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 84px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-section,
+.workflow-section {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.section-copy {
+  max-width: 520px;
+}
+
+.section-copy h2,
+.roadmap-section h2 {
+  margin-bottom: 18px;
+  font-size: 2.5rem;
+}
+
+.section-copy p,
+.roadmap-section p,
+.feature-row p {
+  color: var(--muted);
+}
+
+.feature-list,
+.workflow-list {
+  display: grid;
+  gap: 0;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.45fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.feature-row:last-child,
+.workflow-list li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.feature-row h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.workflow-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: workflow;
+}
+
+.workflow-list li {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.12rem;
+  font-weight: 850;
+  counter-increment: workflow;
+}
+
+.workflow-list li::before {
+  content: counter(workflow, decimal-leading-zero);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.roadmap-section {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 0.9fr) auto;
+  gap: 42px;
+  align-items: end;
+}
+
+.site-brand:focus-visible,
+.site-nav a:focus-visible,
+.primary-link:focus-visible,
+.secondary-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes image-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .landing-hero,
+  .content-section,
+  .workflow-section,
+  .roadmap-section {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-hero {
+    min-height: auto;
+    gap: 42px;
+  }
+
+  .hero-copy h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-image {
+    justify-self: start;
+    width: min(78%, 320px);
+  }
+
+  .roadmap-section {
+    align-items: start;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header,
+  .landing-hero,
+  .content-section,
+  .workflow-section,
+  .roadmap-section {
+    width: min(1120px, calc(100% - 32px));
+  }
+
+  .site-header {
+    min-height: 68px;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .landing-hero {
+    padding: 52px 0 64px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.45rem;
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+  }
+
+  .content-section,
+  .workflow-section,
+  .roadmap-section {
+    padding: 60px 0;
+  }
+
+  .section-copy h2,
+  .roadmap-section h2 {
+    font-size: 2rem;
+  }
+
+  .feature-row,
+  .workflow-list li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
